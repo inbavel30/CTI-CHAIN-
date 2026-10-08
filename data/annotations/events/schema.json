@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "status",
+    "report_id",
+    "sentence_id",
+    "text",
+    "events"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "GOLD",
+        "REVIEW",
+        "REJECTED"
+      ]
+    },
+    "annotator_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^R\\d{3}$"
+    },
+    "sentence_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "type",
+          "trigger",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "EXECUTE",
+              "DOWNLOAD",
+              "DELIVER",
+              "EXPLOIT",
+              "PERSIST",
+              "DISCOVER",
+              "COLLECT",
+              "EXFILTRATE",
+              "COMMUNICATE",
+              "CREATE",
+              "MODIFY",
+              "DELETE",
+              "CREDENTIAL_ACCESS",
+              "LATERAL_MOVE",
+              "IMPACT"
+            ]
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "arguments": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  }
+}

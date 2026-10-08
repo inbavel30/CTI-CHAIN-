@@ -1,0 +1,30 @@
+{
+  "model": "FacebookAI/roberta-base",
+  "seed": 42,
+  "max_length": 256,
+  "train_records": 7570,
+  "validation_records": 1550,
+  "test_records": 3059,
+  "validation": {
+    "eval_loss": 0.09323296695947647,
+    "eval_precision": 0.7737642585551331,
+    "eval_recall": 0.6532905296950241,
+    "eval_f1": 0.7084421235857267,
+    "eval_accuracy": 0.9842376287364983,
+    "eval_runtime": 4.7683,
+    "eval_samples_per_second": 325.064,
+    "eval_steps_per_second": 81.371,
+    "epoch": 1.0
+  },
+  "test": {
+    "eval_loss": 0.017180001363158226,
+    "eval_precision": 0.7728494623655914,
+    "eval_recall": 0.8190883190883191,
+    "eval_f1": 0.7952973720608575,
+    "eval_accuracy": 0.9948503179773538,
+    "eval_runtime": 9.7815,
+    "eval_samples_per_second": 312.734,
+    "eval_steps_per_second": 78.209,
+    "epoch": 1.0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "status",
+    "report_id",
+    "source_event",
+    "target_event",
+    "relation"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "GOLD",
+        "REVIEW",
+        "REJECTED"
+      ]
+    },
+    "annotator_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^R\\d{3}$"
+    },
+    "source_event": {
+      "type": "string"
+    },
+    "target_event": {
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "BEFORE",
+        "AFTER",
+        "OVERLAP",
+        "CONCURRENT",
+        "UNKNOWN"
+      ]
+    },
+    "evidence_sentence_id": {
+      "type": "string"
+    }
+  }
+}

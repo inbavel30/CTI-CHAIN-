@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "status",
+    "report_id",
+    "sentence_id",
+    "relations"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "GOLD",
+        "REVIEW",
+        "REJECTED"
+      ]
+    },
+    "annotator_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^R\\d{3}$"
+    },
+    "sentence_id": {
+      "type": "string"
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relation_id",
+          "subject",
+          "predicate",
+          "object"
+        ],
+        "properties": {
+          "relation_id": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "predicate": {
+            "enum": [
+              "USES",
+              "EXECUTES",
+              "DOWNLOADS",
+              "DELIVERS",
+              "EXPLOITS",
+              "CREATES",
+              "MODIFIES",
+              "CONNECTS_TO",
+              "COMMUNICATES_WITH",
+              "TARGETS",
+              "DROPS",
+              "LOCATED_AT",
+              "USES_TECHNIQUE",
+              "NONE"
+            ]
+          },
+          "object": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

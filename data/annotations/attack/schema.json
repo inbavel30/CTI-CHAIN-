@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "status",
+    "report_id",
+    "event_id",
+    "behavior",
+    "attack_technique"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "GOLD",
+        "REVIEW",
+        "REJECTED"
+      ]
+    },
+    "annotator_id": {
+      "type": "string"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^R\\d{3}$"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "behavior": {
+      "type": "string"
+    },
+    "attack_technique": {
+      "type": "string",
+      "pattern": "^T\\d{4}(\\.\\d{3})?$"
+    },
+    "technique_name": {
+      "type": "string"
+    },
+    "preconditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "postconditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

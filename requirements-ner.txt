@@ -1,0 +1,9 @@
+torch>=2.6,<3
+transformers>=4.50,<5
+datasets>=3.3,<4
+evaluate>=0.4,<1
+seqeval>=1.2,<2
+accelerate>=1.2,<2
+scikit-learn>=1.5,<2
+numpy>=2.0,<3
+pandas>=2.2,<3
